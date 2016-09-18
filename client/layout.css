@@ -1,0 +1,10 @@
+.main {
+    margin: 16px;
+}
+.ui.feed > .event > .label {
+    width: 5em !important;
+}
+
+.ui.feed > .event > .label img {
+    border-radius: 0rem !important;
+}

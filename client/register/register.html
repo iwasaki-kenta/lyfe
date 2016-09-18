@@ -1,0 +1,22 @@
+<template name="register">
+    <div class="ui two column grid">
+        <div class="centered column">
+            <div class="ui form">
+                <div class="field">
+                    <label>Username:</label>
+                    <input id='username' type="text" name="username" placeholder="Username">
+                </div>
+                <div class="field">
+                    <label>Password:</label>
+                    <input id='password' type="password" name="password" placeholder="Password">
+                </div>
+                <div class="field">
+                    <label>Re-enter Password:</label>
+                    <input id='password-confirm' type="password" name="password-confirm" placeholder="Re-enter Password">
+                </div>
+                <a href="{{pathFor '/login'}}"><button class="ui button">Back</button></a>
+                <button id="register" class="ui button" type="submit">Register</button>
+            </div>
+        </div>
+    </div>
+</template>

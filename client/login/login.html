@@ -1,0 +1,20 @@
+<template name="login">
+    <div class="ui two column grid">
+        <div class="centered column">
+            <div class="ui form">
+                <div class="field">
+                    <label>Username:</label>
+                    <input id='username' type="text" name="username" placeholder="Username">
+                </div>
+                <div class="field">
+                    <label>Password:</label>
+                    <input id='password' type="password" name="password" placeholder="Password">
+                </div>
+                <button id="login" class="ui button" type="submit">Login</button>
+                <a href="{{pathFor '/register'}}"><button class="ui button">New?</button></a>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="logout"></template>

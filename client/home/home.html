@@ -1,0 +1,74 @@
+<template name="home">
+    <div class="ui stackable container grid">
+        <div class="ui row centered">
+            <div class="ui sixteen column">
+                <div id="video-player"></div>
+            </div>
+        </div>
+
+        <div class="ui row">
+            <div class="thirteen wide column">
+                <div class="ui segment feed">
+                    {{#each post in posts}}
+                        <div class="event">
+                            <div class="label">
+                                <img src="{{stockImage post.url}}">
+                            </div>
+                            <div class="content">
+                                <div class="summary">
+                                    <a class="user">
+                                        {{watchers post.watchers}}
+                                    </a> reacted to <a class="video-trigger" href="{{post.url}}">a {{post.type}}</a>
+                                    named <a class="video-trigger"
+                                             href="{{post.url}}">'{{post.name}}
+                                    '.</a>
+                                    <div class="date">
+                                        {{timestamp post.timestamp}}
+                                    </div>
+                                </div>
+                                <div class="meta">
+                                    <a class="like open-messages" href="{{post._id}}">  </a>
+                                    {{#each reaction in (reactions post)}}
+                                        <img style="width: 16px; height: 16px;" src="images/{{reaction.emoticon}}.png">
+                                        <code style="font-size: 16px;"><b>{{reaction.value}}%</b></code>
+                                    {{/each}}
+
+
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+
+            <div class="three wide column">
+                <div class="ui text">
+                    <div class="ui segment">
+                        <div class="ui vertical text menu">
+                            <div class="header item">Sort By</div>
+                            <a class="active item">
+                                Most Recent
+                            </a>
+                            <a class="item">
+                                Most Popular
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="ui segment">
+                        <div class="ui vertical text menu">
+                            <div class="header item">Filter By</div>
+                            <a class="active item">
+                                Reactions
+                            </a>
+                            <a class="item">
+                                Locations
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</template>

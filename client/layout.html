@@ -1,0 +1,25 @@
+<head>
+    <script src="https://download.affectiva.com/js/3.1/affdex.js"></script>
+</head>
+
+<template name="mainLayout">
+    <div class="ui top attached inverted menu" style="margin-bottom: 8px;">
+        <div class="ui container">
+            <a href="{{pathFor '/'}}" class="header item">
+                Lyfe.
+            </a>
+            <a href="{{pathFor '/'}}" class="item">Home</a>
+
+            <div class="ui right inverted menu">
+                {{#if currentUser}}
+                    <a href="{{pathFor '/logout'}}" class="item">Logout</a>
+                {{else}}
+                    <a href="{{pathFor '/login'}}" class="item">Login</a>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+
+
+    {{> Template.dynamic template=content}}
+</template>
